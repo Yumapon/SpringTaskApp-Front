@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import * as colors from "@material-ui/core/colors";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
@@ -17,7 +17,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
-import AddIcon from '@mui/icons-material/Add';
 import Brightness7Icon from "@material-ui/icons/Brightness7";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import ListItem from "@material-ui/core/ListItem";
@@ -160,7 +159,7 @@ const GenericTemplate = ({
     localStorage.setItem("darkMode", "off");
     setDarkMode(false);
   };
-  const theme = createMuiTheme({
+  const theme = createTheme({
     typography: {
       fontFamily: fontFamily,
     },

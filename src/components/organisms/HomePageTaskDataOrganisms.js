@@ -1,45 +1,42 @@
 import React from "react";
 import MaterialTable from 'material-table';
+import localizationJapanese from './LocalizationJapanese';
 
 const waitTime = 600
 
-const HomePageTaskData = (
+const HomePageTaskData = ({
   rowAddHandler,
   rowUpdateHandler,
   rowDeleteHandler,
-) => {
-
+  data
+}) => {
   return (
     <MaterialTable
       columns={[
+        { title: '番号', field: 'num', hidden: true },
         { title: 'タスク名', field: 'name' },
         { title: '依頼者', field: 'client' },
         { title: '期限', field: 'deadline' },
       ]}
-      data={[
-        { id: 1, name: 'チョコレート', client: 'お菓子', deadline: '2021/02/16' },
-        { id: 2, name: 'ケーキ', client: 'お菓子', deadline: '2021/03/01' },
-        { id: 3, name: 'りんご', client: 'フルーツ', deadline: '2021/04/21' },
-        { id: 4, name: 'バナナ', client: 'フルーツ', deadline: '2021/06/30' },
-        { id: 5, name: 'みかん', client: 'フルーツ', deadline: '2021/07/26' },
-      ]}
+      data={data.taskList}
+      localization={localizationJapanese}
       options={{
         showTitle: false,
       }}
       editable={{
-        onRowAdd: (newData) =>
+        onRowAdd: (task) =>
           new Promise((resolve) => {
             setTimeout(() => {
-              resolve()
-              rowAddHandler(newData)
+              rowAddHandler(task)
+              resolve();
             }, waitTime)
           }),
-        onRowUpdate: (newData, oldData) =>
+        onRowUpdate: (newtask, oldtask) =>
           new Promise((resolve) => {
             setTimeout(() => {
               resolve()
-              if (oldData) {
-                rowUpdateHandler(newData, oldData)
+              if (oldtask) {
+                rowUpdateHandler(newtask, oldtask)
               }
             }, waitTime)
           }),

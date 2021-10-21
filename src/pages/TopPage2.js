@@ -1,11 +1,11 @@
 import React from "react";
 import GenericTemplate from "../components/templates/GenericTemplate";
-import HomePageTaskData from "../components/organisms/HomePageTaskDataOrganisms"
+import TaskTableContainer from "../containers/TaskTableContainer"
 
 const TopPage = () => {
   return (
     <GenericTemplate title="タスク一覧">
-      <HomePageTaskData />
+      <TaskTableContainer />
     </GenericTemplate>
   );
 };
