@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const createTask = createAsyncThunk('createTask', async (task) => {
     console.log("ADDAPIを呼び出します");
-    return (await fetch(`http://192.168.99.114/addtask`, {
+    return (await fetch(`/addtask`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ export const createTask = createAsyncThunk('createTask', async (task) => {
 })
 
 export const updateTask = createAsyncThunk('updateTask', async (task) => {
-    return (await fetch(`http://192.168.99.114/changetask/${task.num}`, {
+    return (await fetch(`/changetask/${task.num}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ export const updateTask = createAsyncThunk('updateTask', async (task) => {
 })
 
 export const deleteTask = createAsyncThunk('deleteTask', async (task) => {
-    return (await fetch(`http://192.168.99.114/deletetask/${task.num}`, {
+    return (await fetch(`/deletetask/${task.num}`, {
         method: `DELETE`
     })).ok;
 })

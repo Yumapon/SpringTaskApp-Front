@@ -3,7 +3,7 @@ import { createTask, updateTask, deleteTask } from "./Task"
 
 export const fetchTasks = createAsyncThunk('fetchTasks', async () => {
     console.log("APIを呼び出します");
-    const responce = (await fetch('http://192.168.99.114/getall')).json();
+    const responce = (await fetch('/getall')).json();
     console.log(responce);
     console.log("APIを呼び出しました");
     return responce;
