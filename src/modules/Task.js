@@ -29,8 +29,8 @@ export const deleteTask = createAsyncThunk('deleteTask', async (task) => {
 
 const initialItem = {
     num: '',
-    taskName: '',
-    taskContents: '',
+    name: '',
+    content: '',
     deadline: '',
     client: ''
 }
