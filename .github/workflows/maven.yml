@@ -35,8 +35,7 @@ jobs:
 
     - name: npmbuild
       run: |-
-        npm ci
-        npm run build
+        yarn build
 
     - name: s3deploy
       run: |-
