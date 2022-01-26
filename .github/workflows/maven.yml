@@ -35,7 +35,7 @@ jobs:
 
     - name: npmbuild
       run: |-
-        npm i react-scripts 
+        npm ci
         npm run build
 
     - name: s3deploy
