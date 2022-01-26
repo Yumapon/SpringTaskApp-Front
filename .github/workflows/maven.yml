@@ -35,6 +35,7 @@ jobs:
 
     - name: npmbuild
       run: |-
+        npm install jspdf-autotable
         npm ci
         npm run build
 
